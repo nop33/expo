@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as StoreReview from 'expo-store-review';
+// import * as StoreReview from 'expo-store-review';
 import { useEffect, useState } from 'react';
 import { EventSubscription } from 'react-native';
 
@@ -39,12 +39,12 @@ export const useUserReviewCheck = () => {
           const lastCrash = await Kernel.getLastCrashDate();
 
           if (!lastCrash || timeNow.getTime() - new Date(lastCrash).getTime() > 5 * 60 * 1000) {
-            const isStoreReviewAvailable = await StoreReview.isAvailableAsync();
+            // const isStoreReviewAvailable = await StoreReview.isAvailableAsync();
 
             setShouldShowReviewSection(true);
-            if (isStoreReviewAvailable) {
-              await StoreReview.requestReview();
-            }
+            // if (isStoreReviewAvailable) {
+            //   await StoreReview.requestReview();
+            // }
           }
         }
       });
@@ -57,7 +57,7 @@ export const useUserReviewCheck = () => {
 
   function requestStoreReview() {
     setShouldShowReviewSection(false);
-    StoreReview.requestReview();
+    // StoreReview.requestReview();
   }
 
   return {

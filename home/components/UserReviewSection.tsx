@@ -13,13 +13,18 @@ type Props = {
 };
 
 export default function UserReviewSection({ snacks, projects }: Props) {
+  const [] = useState(false);
+  const [] = useState(false);
+
+  useEffect(() => {}, []);
+
   const { shouldShowReviewSection, requestStoreReview, dismissReviewSection } =
     useUserReviewCheck();
   const theme = useExpoTheme();
 
-  const onPressNeedsWork = () => {};
+  const onPressNotReally = () => {};
 
-  if (!shouldShowReviewSection) {
+  if (!shouldShowReviewSection && false) {
     return null;
   }
 
