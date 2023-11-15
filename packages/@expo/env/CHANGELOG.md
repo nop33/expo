@@ -8,6 +8,8 @@
 
 ### 🐛 Bug fixes
 
+- Avoid unnecessary `process.env` modifications for consistent Node and Bun results.
+
 ### 💡 Others
 
 ## 0.1.0 — 2023-07-28
