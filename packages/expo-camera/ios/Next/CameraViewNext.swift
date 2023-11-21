@@ -415,7 +415,7 @@ public class CameraViewNext: ExpoView, EXCameraInterface, EXAppLifecycleListener
 
     takenImage = ExpoCameraUtils.crop(image: takenImage, to: croppedSize)
 
-    let path = FileSystemUtilities.generatePath(
+    let path = FileSystemUtilities.generatePathInCache(
       appContext,
       in: "Camera",
       ext: ".jpg")
@@ -530,7 +530,7 @@ public class CameraViewNext: ExpoView, EXCameraInterface, EXAppLifecycleListener
           return
         }
 
-        let path = FileSystemUtilities.generatePath(self.appContext, in: "Camera", ext: ".mov")
+        let path = FileSystemUtilities.generatePathInCache(self.appContext, in: "Camera", ext: ".mov")
         let fileUrl = URL(fileURLWithPath: path)
         self.videoRecordedPromise = promise
 
